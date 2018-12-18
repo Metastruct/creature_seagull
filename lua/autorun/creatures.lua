@@ -35,7 +35,7 @@ end)
 
 if SERVER then
 	hook.Add("KeyPress", "creatures_debug", function(ply, key)
-		if ply:IsAdmin() and ply:Nick():lower():find("capsadmin") then else return end
+		if not ply:IsAdmin() or not ply.creatures_debug then return end
 
 		for _, self in ipairs(creatures.GetAll()) do
 			if key == IN_ATTACK then
