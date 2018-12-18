@@ -366,10 +366,11 @@ do -- calc
 end
 
 if SERVER then
+	local _print,print=print,function()end
 	function ENT:OnTakeDamage(info)
 		print(info:GetDamage(), info:GetAttacker())
 	end
-
+	local print = _print
 	function ENT:Think()
 		local scale = self:GetModelScale()
 		self:PhysWake()
