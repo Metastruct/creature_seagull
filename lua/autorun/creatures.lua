@@ -10,7 +10,7 @@ function creatures.GetAll()
 	return creatures.active
 end
 
-include("networking.lua")
+include("creature_networking.lua")
 include("base_creature.lua")
 
 hook.Add("OnEntityCreated", "creatures", function(ent)
@@ -63,8 +63,9 @@ if SERVER then
 	end)
 end
 
+if notagain then
 timer.Simple(0, function() notagain.AutorunDirectory("creatures") end)
-
+end
 
 function creatures.Create(what, where, count, min,max)
 	what = what or "base"

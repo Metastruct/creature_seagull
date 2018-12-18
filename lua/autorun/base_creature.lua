@@ -1,3 +1,5 @@
+if not _G.creatures then return end
+
 AddCSLuaFile()
 creatures.DEBUG = false
 local ENT = {}
